@@ -1,0 +1,12 @@
+#core web vitals
+1. cls-cumulative layout shift
+2. lcp-largest contentful paint (how much time it take for largest element of page to load)
+3. fid- first input delay
+
+
+meta tags used to rank in seo but nowdays seo doesn't consider input
+
+form 
+form tags
+
+inline and block elements
