@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <!-- <h1>What is box model in css?</h1>
+    <p>Every element in a document is considered as a box. The box model is a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>
+    <h2>Margin</h2>
+    <p>The margin clears an area outside the border. The margin does not have a background color, it is completely transparent.</p>
+    <h2>Border</h2>
+    <p>The border is a border that goes around the padding and content. The border is affected by the background color of the box.</p>
+    <h2>Padding</h2>
+    <p>The padding clears an area around the content. The padding is affected by the background color of the box.</p> -->
+
+
+    <style> 
+    /* our browser add some default margin and padding to the body tag so we have to remove it    */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            color:black;
+            font-size: 30px;
+            /* background-color: black; */
+        }
+        .box1{
+            margin: 20px;
+            border: 10px solid red;
+            padding: 20px;
+            box-sizing: border-box;
+            /* this property is used to include the border and padding in the width and height of the element */
+        }
+        .box2{
+            margin: 20px;
+            border: 10px solid green;
+            padding: 20px;
+        }
+        /* margin collapse concept is used in css which
+         is that when two elements are adjacent to each 
+         other then the margin of the two elements will
+          be the maximum of the two margins. */
+    </style>
+</head>
+<body>
+    <div class="box box1">I am box1</div>
+    <div class="box box2">I am box2</div>
+</body>
+</html>
