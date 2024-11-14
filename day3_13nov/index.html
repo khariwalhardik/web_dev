@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- internal css is used to style a single page -->
+    <style>
+        /* div is selector and inside it is declaration block and we can write css properties and values(key and value pair) */
+        div{
+            background-color: yellow;
+            color: red;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        span,p{
+            color: green;
+            background-color: blanchedalmond;
+            font-size: 30px;
+        }
+    </style>
+
+
+    <!-- external css is used to style multiple pages -->
+     <!-- using external css is a good practice because we can use the same css file in multiple pages -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- inline css is used to style a single element but not a good practice -->
+    <h1 style="color: yellow;background-color: red;">About Me</h1>
+    <div>
+        Hi I am HARDIK KHARIWAL and i am a web developer
+    </div>
+    <span>
+        css is a piece of cake
+    </span>
+    <p>
+        by the way we can change the color of text using css properties
+    </p>
+    <h2>
+        <ul>
+            <li>Inline CSS</li>
+            <li>Internal CSS</li>
+            <li>External CSS</li>
+        </ul>
+    </h2>
+</body>
+</html>

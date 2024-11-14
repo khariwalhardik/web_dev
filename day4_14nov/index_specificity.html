@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css specificity</title>
+    <style>
+        .yellow{
+            color: yellow;
+        }
+        .cred{
+            color: red;
+        }
+        .cpurple{
+            color: purple;
+        }
+        [data-x="a"]{
+            color: green;
+        }
+        p{
+            color: blue;
+        }
+        .id{
+            color: orange;
+        }
+        .yellow{
+            color: pink;
+        }
+
+        *{
+            color:black
+        }
+    </style>
+</head>
+<body>
+    if selector is same then the last one will be applied
+
+    <p class="yellow cred cpurple">1.position and order of apprearance of the selectors is important</p>
+
+    <div>
+        order of specificity
+        <!-- 1. inline style
+        2. id
+        3. class or attribute selector
+        4. element
+        5. universal -->
+
+        <p style="color: blue;">1. inline style</p>
+        <p id="id">2. id</p>
+        <p class="yellow">3. class</p>
+        <p data-x="a">4. attribute or class</p>
+
+        <!-- !important is used to override the specificity -->
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Element Selector */
+        div{
+            background-color: yellow;
+            color: red;
+            font-size: 20px;
+        }
+
+        /* Class Selector */
+        .red{
+            background-color: red;
+            color: white;
+            font-size: 30px;
+        }
+
+        /* ID Selector */
+        #green{
+            background-color: green;
+            color: white;
+            font-size: 30px;
+        }
+
+        /* child selector */
+
+        div>p{
+            background-color: rgb(214, 22, 214);
+            color: white;
+            font-size: 30px;
+        }
+
+        /* Descendant Selector */
+        div h3{
+            background-color: rgb(55, 0, 255);
+            color: white;
+            font-size: 30px;
+        }
+
+        /* Universal Selector */
+        *{
+            padding: 20px;
+            text-align: center;
+        }
+        /* * select all the elements in the html document */
+
+
+        /* pseudo class selector */
+        a:hover{
+            background-color: rgb(233, 168, 219);
+            color: white;  
+        }
+        a:link{
+            /* background-color: rgb(0, 255, 0); */
+            color: red;  
+        }
+        a:active{
+            background-color: rgb(0, 0, 255);
+            color: white;
+        }
+        
+        /* where ever the first child is a paragraph then the background color will be blue and text color will be white */
+        p:first-child{
+            background-color: rgb(0, 204, 255);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="red">
+        hi i am a div
+    </div>
+    <div id="green">
+        hi i am another div
+        <p>
+            hi i am a paragraph inside a div
+        </p>
+
+        <article>
+            hi i am an article inside a div
+        </article>
+
+        <span>
+            <h3>
+                hi i am a heading3 inside a span inside a div
+            </h3>
+        </span>
+    </div>
+    <div>
+        <a href="https://www.google.com">Go to google</a>
+    </div>
+</body>
+</html>
