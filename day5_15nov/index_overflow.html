@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        .box {
+            width: 30vw;
+            height: 40vh;
+            background-color: rgb(230, 182, 222);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid black;
+            overflow: scroll;
+            /* even if the content is not overflowing, the scroll bar will be visible
+            so use auto */
+            overflow: auto;
+            /* white-space: nowrap; */
+            /* whitespace will remove all the new lines and will make the content in a single line */
+            text-overflow: ellipsis;
+            /* overflow-x:hidden; */
+            /* overflow-y: auto; */
+            /* these both can be used directly in overflow property;
+            like overflow: x,y; */
+            overflow:hidden auto 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error voluptatem, magnam facilis suscipit fugiat modi
+        quasi! Temporibus, eos? Optio eveniet quasi repellat temporibus?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam fugit soluta totam laborum cupiditate voluptas
+        dolores, dolor repellat voluptatibus repudiandae odio, sapiente consectetur quasi quis eius incidunt eum maxime
+        ad, ex pariatur? Error unde, exercitationem harum earum quisquam facere at sapiente ipsum quasi itaque corrupti?
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css display property</title>
+    <style>
+        div{
+            width:auto;
+            color:yellow;
+            background-color: darkblue;
+            /* visibility: hidden; */
+
+        }
+        .box{
+            display:inline-block;
+            margin:23px;
+            padding:20px;
+            border:2px solid red;
+            display:grid;
+            display:flex;
+            display:inline-flex;
+            /* display:none; */
+            /* none display property will hide the element */
+
+            /* there is also property called visibility:hidden which will hide the element but it will take the space in the layout.; */
+            /* visibility: hidden; */
+        }
+    </style>
+</head>
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/display -->
+<body>
+    
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quas odit soluta, dolorem ipsum nisi omnis! Quibusdam, ab cupiditate. Repudiandae consectetur debitis possimus.
+    </div>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore quaerat, amet est cumque eius incidunt repudiandae dolor iure libero eum temporibus. Deleniti, labore.
+    </div>
+    <div class="box">
+        using display property inline-block we can change the block level element to inline block level element and 
+        it will take the width of the content inside it.
+        we can also use margin and padding property to give space between the elements.
+        if we only use inline property then it will not take the width of the content inside it.
+        so inline-block is the best option to use.
+    </div>
+</body>
+</html>

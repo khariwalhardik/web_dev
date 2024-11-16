@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sizing</title>
+    <style>
+        html{
+            font-size:10px;
+            /* this is the root element; */
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            border: 2px solid black;
+            background-color: aqua;
+            /* in pixels */
+            width: 100px;
+            /* in view code width is 100px but in browser it is 100px + 4px + 4px = 108px */
+            width: 80vw;
+            box-sizing: border-box;
+            margin: auto;
+            /* only box elemnts are aligned in center if we use margin:auto; */
+
+        }
+
+        .container {
+            border: 2px solid black;
+            background-color: rgb(208, 255, 0);
+            margin: 23px auto;
+            width: 80vw;
+            height: 70vh;
+            /* margin can be used with top-bottom and left-right;  or top,bottom,left,right*/
+
+        }
+
+        .container p {
+            /* em is relative to the parent element font-size; */
+            /* font-size: 1.5em; */
+            /* rem is relative to the root element font-size; */
+            font-size:2rem;
+        }
+        .container>div{
+            /* % is relative to the parent element; */
+            font-size: 120%;
+            border:2px solid darkred;
+            background-color:lightblue;
+            width:50%;
+        }
+        .class2{
+            border:2px solid black;
+            background-color:lightpink;
+            font-size:22px;
+            width:70vmin;
+            margin:22px auto;
+            /* if we want to use min-width and max-width then we have to use width:100%; */
+            min-width: 80px;
+            /* % is also a unit but it is relative to the parent element; */
+        }
+    </style>
+</head>
+<!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units -->
+<body>
+    <div class="box">
+        i am a box
+    </div>
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rerum vitae eius odio itaque quo, doloremque
+        est illo nam, aliquid totam eos. Veritatis, consequuntur, quidem officia voluptatem voluptatibus accusamus,
+        cumque hic mollitia optio tenetur maiores aperiam praesentium perferendis blanditiis repellat itaque voluptate
+        illum? Dolores ratione tempore, sint dicta maiores obcaecati repellendus amet excepturi voluptatibus, aliquid id
+        velit. Obcaecati hic et veritatis vero nisi, temporibus inventore officiis alias sunt cumque eaque saepe
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem voluptatem alias cum repellat facere
+            fuga, necessitatibus vero, eum pariatur earum nesciunt voluptas aspernatur.</p>
+        <div>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae cum enim reiciendis vel ut a, porro libero esse inventore quisquam sapiente quam expedita?
+        </div>
+    </div>
+    <div class="class2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ipsum commodi eos deleniti optio soluta, totam tempora consequatur, asperiores delectus, numquam officiis id.
+    </div>
+</body>
+
+</html>
