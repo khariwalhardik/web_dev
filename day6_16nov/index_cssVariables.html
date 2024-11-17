@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --color:rgb(68, 155, 255);
+            /* these act as a global variable; */
+            --scolor:rgb(160, 190, 218);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            --color:orange; 
+            /* it cat as local variable for this block only  */
+            background-color: var(--color,blue);
+            /* if color variable is not defined then it will take blue as default; */
+            display: flex;
+        }
+        .div1{
+            background-color: var(--scolor);
+        }
+        ul{
+            display: flex;
+            
+        }
+        ul li{
+            list-style: none;
+            padding: 10px;
+            border: 2px solid (--scolor);
+            opacity: 0.8;
+        }
+        ul li:first-child{
+            background-color: darkred;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <div class="div1">
+        <h1>heading</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, quaerat itaque, impedit nostrum facilis minima quasi non iste, fugiat repellendus ab est? Ad asperiores molestiae ullam labore quo error, perspiciatis laboriosam officia deleniti quia totam, ducimus qui, molestias veritatis cupiditate distinctio dolorem voluptate minima doloribus?</p>
+    </div>
+</body>
+</html>

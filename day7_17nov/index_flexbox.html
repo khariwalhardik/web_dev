@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css flexbox</title>
+    <style>
+        .container{
+            border:2px solid red;
+            height:80vh;
+            display: flex;
+            /* justify-content: center; */
+
+            /* this property is used to align the items horizontally; */
+            /* align-items: center; */
+            /* this property is used to align the items vertically; */
+
+            /* we can also change the flex direction by using the property flex-direction: column; */
+            /* flex-direction: column; */
+            /* by default the flex direction is row; */
+            /* main axis is the direction of the flex-direction property; */
+            /* cross axis is the opposite of the main axis;  */
+
+
+            /* justify content is done on the main axis; */
+            /* align items is done on the cross axis; */
+            /* main start, main end, cross start, cross end; */
+
+
+            /* main size is the size of the main axis; */
+            /* cross size is the size of the cross axis; */
+
+            /* flex-wrap: wrap; */
+
+            /* align-content: center; */
+
+            /* there is no justifyitem property in flexbox; */
+
+
+            /* gap:30px; */
+            /* row-gap: 30px; */
+            /* column-gap: 10px; */
+            gap:30px 15px;
+
+
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            background-color: burlywood;
+            border:2px solid black;
+            /* margin: 10px; */
+        }
+        .order-1{
+            /* by default the order is 0; */
+            /* order: 1; */
+            /* flex-grow: 1; */
+            /* flex-shrink:1; */
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="item order-1"> 1</div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </main>
+</body>
+</html>
