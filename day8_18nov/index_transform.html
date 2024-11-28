@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border:2px solid red;
+            height: 80vh;
+            width: 80vw;
+            display:grid;
+            /* gap:10px; */
+            
+        }
+        .box{
+            border:2px solid black;
+            height:100px;
+            width:100px;
+            background-color: beige;
+            /* transform: rotate(45deg); */
+            /* transform: rotateX(50deg); about x axis */
+            /* transform: rotateY(50deg); about y axis */
+            /* transform: rotateZ(50deg); about z axis */
+            /* simple rotate and rotateZ is same both about z axis; */
+            /* there is another unit which is turn which is equal to 360deg; */
+
+            /* transform:rotate(0.225turn); */
+
+            /* transform:translate(50px,50px); used very much in grid layout; */
+            /* using multiple transform property; */
+            transform:rotate(45deg) scale(1.5) skewX(40deg) skewY(4deg) translate(50px,50px);
+            
+            
+            /* we can change the origin of the rotation; */
+            transform-origin: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+</body>
+</html>

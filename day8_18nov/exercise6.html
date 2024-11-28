@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        nav{
+            border:2px solid black;
+            height:25px;
+            width:100%;
+            display: flex;
+            grid-template-columns: repeat(8,1fr);
+        }
+        .item{
+            border:2px solid black;
+            height:100%;
+            width:100%;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        }
+        .logo{
+            /* i have image link of logo */
+            background-image: url(https://www.ultraedit.com/wp-content/uploads/2023/01/UE-Logo-1.webp);
+            /* i want to resie the image */
+            background-size:2cm;   
+        }
+        .logo1{
+            /* height:10px;
+            width:10px; */
+            background-color: black;
+            border-radius: 10px;;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="item logo"></div>
+            <div class="item "></div>
+            <div class="item ">PRODUCT</div>
+            <div class="item ">FOR BUSINESS</div>
+            <div class="item">RESOURCES</div>
+            <div class="item">SUPPRT</div>
+            <div class="item">OUR COMPANY</div>
+            <div class="item logo1"></div>
+            <div class="item logo1"></div>
+        </nav>
+    </header>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: beige;
+            height:50vh;
+            width:40vw;
+        }
+        .box{
+            background-color: cyan;
+            height:5vh;
+            width:4vw;
+            /* transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 1s; */
+
+            transform: all 2s ease-in-out 1s;
+        }
+        .box:hover{
+            transform: translate(20vw,20vh);
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

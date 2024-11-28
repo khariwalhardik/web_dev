@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border:2px solid red;
+            display:grid;
+            width:80vw;
+            height:80vh;
+            /* naming the grid lines */
+            /* grid-template-columns: [pehla] 100px [doosra] 120px [theersa]; */
+            /* this property is used to set the width of the columns in the grid */
+
+            /* grid line ,grid cell,gride track, grid area are the terms used in grid layout */
+
+            /* grid-template-rows: 100px 100px 100px; */
+
+            /* very great unit is fr which is used to divide the space in the grid layout */
+            /* fr is used to divide the space in the grid layout */
+
+            /* grid-template-columns: 1fr 2fr 1fr; */
+
+            /* grid-template-columns: repeat(3,1fr); */
+            /* repeat is used to repeat the value of the property */
+            gap:30px;
+
+
+            /* do not used padding and margin in flexbox and grid layout */
+            /* because it will not work properly */
+
+            justify-items: center;
+            align-items: center;
+            /* justify-items is used to align the items in the grid layout */
+
+            grid-template-columns: repeat(3,100px);
+            /* when your container is larger than the grid then u can use the justify content and align content: ; */
+            justify-content: end;
+            align-content: start;
+
+        }
+        .item{
+            border:2px solid black;
+            height:50px;
+            width:50px;
+        }
+        /* .item-4{
+            grid-row: 1/2;
+            /* or you can do
+            grid-row-start: 1;
+            grid-row-end: 2; */
+            /* start from 1 and end at 2 */
+            /* grid-column: pehla/theersa; */
+        /* }  */
+        .item-1{
+            /* grid-row: 1/2;
+            grid-column: 1/2; */
+
+            justify-self: end;
+            align-self:flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item item-4">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>
