@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box" data-createdby="HK" data-storyby="Khari">Hey I am the Box</div>
+    </div>
+
+    <script>
+        let container=document.querySelector(".container");
+
+        //innerHTML
+        console.log(container.innerHTML);
+        //outerHTML
+        console.log(container.outerHTML);
+        //tagName
+        console.log(container.tagName);
+        //innerText
+        console.log(container.innerText);
+        //NodeName
+        console.log(container.nodeName);
+        //tag name is only for HTML elements while nodeName is for all nodes
+
+        //textContent
+        console.log(container.textContent);
+        //textContent will give the text content of the element and all its descendants
+
+        //hidden property
+        console.log(container.hidden);//checks if the element is hidden or not
+        container.hidden=true;//hides the element
+        container.hidden=false;//unhides the element
+
+        //change innerHTML
+        document.querySelector(".box").innerHTML="I am the HK";
+        
+
+        // hasAttribute tis method checks if the element has the attribute or not
+        console.log(container.hasAttribute("style"));
+
+        //getAttribute this method gets the value of the attribute
+        console.log(container.getAttribute("style"));
+
+        //setAttribute this method sets the value of the attribute
+        container.setAttribute("style","background-color:lightcoral");
+
+        //removeAttribute this method removes the attribute
+        container.removeAttribute("style");
+
+        //dataset
+        console.log(document.querySelector(".box").dataset.createdby);
+
+        //create element
+        let newBox=document.createElement("div");
+        newBox.classList.add("box");
+        newBox.setAttribute("data-createdby","HK");
+        newBox.innerHTML="I am the new box Appended by <b>HK</b>";
+        container.appendChild(newBox);
+
+        //prepend
+        let newBox2=document.createElement("div");
+        newBox2.classList.add("box");
+        newBox2.setAttribute("data-createdby","HK");
+        newBox2.innerHTML="I am the new box Prepended by <b>HK</b>";
+        container.prepend(newBox2);
+
+        //insertBefore
+        let newBox3=document.createElement("div");
+        newBox3.classList.add("box");
+        newBox3.setAttribute("data-createdby","HK");
+        newBox3.innerHTML="I am the new box Inserted Before by <b>HK</b>";
+        container.insertBefore(newBox3,container.children[1]);
+
+        //replacewith
+        let newBox4=document.createElement("div");
+        newBox4.classList.add("box");
+        newBox4.setAttribute("data-createdby","HK");
+        newBox4.innerHTML="I am the new box Replaced by <b>HK</b>";
+        container.replaceChild(newBox4,container.children[1]);
+
+
+        //dynamically addition of any new node in the dom tree is called as DOM manipulation
+
+        let cont=document.querySelector(".container");
+        //insertAdjacentElement
+        cont.insertAdjacentHTML("beforebegin","I am under the container but <i>before begin</i> it <b>HK</b>");    
+        cont.insertAdjacentHTML("afterbegin","I am under the container but <i>after begin</i> it <b>HK</b>");
+        cont.insertAdjacentHTML("beforeend","I am under the container but <i>before end</i> it <b>HK</b>");
+        cont.insertAdjacentHTML("afterend","I am under the container but <i>after end</i> it <b>HK</b>");
+
+        //remove
+        cont.querySelector(".box").remove();//removes the first box element from the container
+
+        // classlist
+        console.log(cont.classList.add("container2"));
+        console.log(cont.classList.remove("container"));
+        console.log(cont.classList.toggle("container2"));
+        console.log(cont.classList.toggle("container2"));
+
+
+    </script>
+</body>
+</html>

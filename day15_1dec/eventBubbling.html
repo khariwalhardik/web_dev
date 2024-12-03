@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: red;
+            margin: 10px;
+            padding: 10px;
+        }
+        .childcontainer{
+            background-color: green;
+            margin: 10px;
+            padding: 10px;
+        }
+        .box{
+            background-color: blue;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="childcontainer">
+            <div class="box">
+                hey i am the box
+            </div>
+        </div>
+    </div>
+    <script>
+        const container = document.querySelector('.container');
+        const childcontainer = document.querySelector('.childcontainer');
+        const box = document.querySelector('.box');
+
+        container.addEventListener('click', () => {
+            alert('container clicked');
+        });
+
+        childcontainer.addEventListener('click', () => {
+            alert('childcontainer clicked');
+        });
+
+        box.addEventListener('click', (e) => {
+            e.stopPropagation();
+            alert('box clicked');
+        });
+
+        function getrandmoncolor(){
+            return `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
+        }
+
+        setInterval(() => {
+            box.style.backgroundColor = getrandmoncolor();
+            container.style.backgroundColor = getrandmoncolor();
+            childcontainer.style.backgroundColor = getrandmoncolor();
+        }, 2000);
+
+        
+        setTimeout(() => {
+            box.style.textAlign = 'center'; 
+        }, 2000);
+    </script>
+
+    <!-- //we can stop event bubbling by using stopPropagation() method -->
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+    <style>
+        .box{
+            width: 10vw;
+            height: 10vh;
+            background-color: red;
+            margin: 10px;
+            border:2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">box 1</div>
+        <div class="box">box 2</div>
+        <div class="box">box 3</div>
+        <div class="box">box 4</div>
+        <div class="box">box 5</div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Ali</td>
+            <td>20</td>
+    </table>
+
+    <script>
+        let container = document.querySelector('.container');
+        console.log(container.childNodes); // returns all the child nodes including text nodes
+        console.log(container.children); // returns all the child elements
+        console.log(container.firstChild); // returns the first child node
+        console.log(container.firstElementChild); // returns the first child element
+
+        console.log(document.body.childNodes); // returns all the child nodes of body
+        console.log(document.body.children); // returns all the child elements of body
+        console.log(document.body.firstChild); // returns the first child node of body
+        console.log(document.body.firstElementChild); // returns the first child element of body
+        console.log(document.body.childNodes[1]); // returns the second child node of body
+        console.log(document.body.childNodes[1].childNodes[1]); // returns the second child element of body
+
+        let box1=document.body.childNodes[1].childNodes[1];
+        box1.style.backgroundColor='green';
+        box1.style.color='white';
+        box1.style.fontSize='20px';
+        box1.style.fontWeight='bold';
+
+        //parent node
+        console.log(box1.parentElement); // returns the parent element of box1
+        console.log(box1.parentNode); // returns the parent node of box1
+
+        let parentBox1=box1.parentElement;
+        parentBox1.style.backgroundColor='yellow';
+        parentBox1.style.height='80vh';
+        parentBox1.style.width='50vw';
+        parentBox1.style.borderRadius='20px';
+        parentBox1.style.position='fixed';
+        parentBox1.style.display='grid';
+        parentBox1.style.alignContent='center';
+        parentBox1.style.justifyContent='center';
+        parentBox1.style.margin='10vh 25vw';
+
+
+        //children will return all the child html elements
+        console.log(parentBox1.children);
+        //next element sibling will return the next sibling element
+        console.log(box1.nextElementSibling);
+        //previous element sibling will return the previous sibling element
+        let box3=box1.nextElementSibling.nextElementSibling;
+        console.log(box3);
+        console.log(box1.previousElementSibling);
+
+        console.log(document.body.children);
+        console.log(document.body.children[1]);
+        let mytable=document.body.children[1];
+
+        
+
+    </script>
+</body>
+</html>
+
+
+<!-- white space is also considered as a text node but text node is not an element -->
+<!-- firstChild and firstelementChild are different -->

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Account</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+        * { margin: 0; padding: 0; font-family: Poppins; box-sizing: border-box; }
+        body { background-color: #f4f4f4; padding: 0; }
+        .container { display: flex; }
+        .left { width: 40vw; height: 100vh; background-color: black; }
+        .right { width: 60vw; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+        h1 { font-size: 30px; color: black; margin-bottom: 10px; text-align: center; }
+        h2 { font-size: 24px; color: black; margin-bottom: 20px; text-align: center; }
+        .asterisk { color: red; font-size: 14px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 20px; font-weight: 600; color: black; }
+        .upload-area { display: flex; justify-content: space-between; align-items: center; border: 2px dashed #ccc; padding: 10px; border-radius: 5px; cursor: pointer; background-color: #fafafa; }
+        .upload-area:hover { background-color: #eaeaea; }
+        .upload-area span { color: #777; font-size: 14px; }
+        .upload-icon { font-size: 24px; color: black; }
+        select, input[type="file"], textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; background-color: #fafafa; font-size: 14px; }
+        textarea { height: 100px; resize: none; }
+        .note { font-size: 12px; color: #777; margin-top: 5px; }
+        button { display: block; width: 100%; padding: 10px; background: black; color: white; border: none; border-radius: 5px; font-size: 14px; cursor: pointer; margin-top: 20px; }
+        button:hover { background: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <h1>Verify Your Account </h1>
+            <h2>Upload the Following Documents</h2>
+            <div class="note">An asterix (*) means it's a required field </div>
+            <form>
+                <!-- Government Issued ID -->
+                <div class="form-group">
+                    <label>* Government Issued ID Card</label>
+                    <select id="govt-id-select">
+                        <option value="">Select a document</option>
+                        <option value="aadhar">Aadhar Card</option>
+                        <option value="pan">PAN Card</option>
+                        <option value="voter">Voter ID Card</option>
+                        <option value="passport">Passport</option>
+                    </select>
+                    <input type="file" id="govt-id-upload" accept=".pdf" style="display: none;" />
+                    <div class="upload-area" onclick="triggerFileUpload('govt-id-upload')">
+                        <span>Click to upload document</span>
+                        <span class="upload-icon">+</span>
+                    </div>
+                </div>
+
+                <!-- Registration Number -->
+                <div class="form-group">
+                    <label>* Registration Number</label>
+                    <select id="reg-select">
+                        <option value="">Select a document</option>
+                        <option value="certificate">Certificate</option>
+                        <option value="license">License</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="file" id="reg-upload" accept=".pdf" style="display: none;" />
+                    <div class="upload-area" onclick="triggerFileUpload('reg-upload')">
+                        <span>Click to upload document</span>
+                        <span class="upload-icon">+</span>
+                    </div>
+                </div>
+
+                <!-- Work License -->
+                <div class="form-group">
+                    <label>* Work License</label>
+                    <select id="work-select">
+                        <option value="">Select a document</option>
+                        <option value="driving">Driving License</option>
+                        <option value="professional">Professional License</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="file" id="work-upload" accept=".pdf" style="display: none;" />
+                    <div class="upload-area" onclick="triggerFileUpload('work-upload')">
+                        <span>Click to upload document</span>
+                        <span class="upload-icon">+</span>
+                    </div>
+                </div>
+
+                <!-- Tell About Yourself -->
+                <div class="form-group">
+                    <label>Tell About Yourself (Optional)</label>
+                    <textarea placeholder="Write about yourself..." style="height: 220px;"></textarea>
+                    <div class="note">This field is not compulsory.</div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Trigger the file upload dialog
+        function triggerFileUpload(id) {
+            document.getElementById(id).click();
+        }
+    </script>
+</body>
+</html>

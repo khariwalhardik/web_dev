@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note taking</title>
+    <style>
+        .note {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            overflow: auto;
+        }
+        button{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button>Click Here to add note</button>
+    <button class="save">save</button>
+    <div class="note">
+    </div>
+    <button class="savefile">save as text file</button>
+    <script>
+        const button =document.querySelector('button');
+        const note=document.querySelector('.note');
+        const saveButton = document.querySelector('.save');
+        button.addEventListener('click',()=>{
+            const newNote = document.createElement('textarea');
+            note.appendChild(newNote);
+        });
+        saveButton.addEventListener('click',()=>{
+            const noteText = document.querySelector('textarea').value;
+            //remove textarea
+            document.querySelector('textarea').remove();
+            const newNote = document.createElement('div');
+            newNote.textContent = noteText;
+            note.appendChild(newNote);
+        });
+        const saveFileButton = document.querySelector('.savefile');
+        saveFileButton.addEventListener('click',()=>{
+            const noteText = document.querySelector('div').textContent;
+            const blob = new Blob([noteText],{type:'text/plain'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'note.txt';
+            a.click();
+        });
+    </script>
+</body>
+</html>

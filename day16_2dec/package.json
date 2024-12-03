@@ -1,0 +1,18 @@
+{
+  "name": "learningbackend",
+  "version": "1.0.0",
+  "description": "Currently I am learning backend",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "learn"
+  ],
+  "author": "hardik khariwal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "slugify": "^1.6.6"
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random box DOM</title>
+    <style>
+        .container{
+            background-color: azure;
+            border-radius: 10px;
+            border:2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+        }
+        .box{
+            height:50px;
+            width:50px;
+            border:1px solid black;
+            background-color: lightcoral;
+            border-radius: 10px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+    </div>
+    <script>
+        let boxes=document.querySelectorAll('.box');
+        boxes.forEach(box=>{
+            box.style.backgroundColor=`rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+            box.addEventListener('mouseover',()=>{
+                box.style.backgroundColor=`rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+            });
+
+        });
+    </script>
+</body>
+</html>
