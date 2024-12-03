@@ -77,7 +77,7 @@
                 <div class="form-group">
                     <div class="checkbox-container" style="padding: 10px 0px;">
                         <input type="checkbox" id="terms" />
-                        <label for="terms">By verifying and adding details, you agree to the <a href="#">terms and conditions</a>.</label>
+                        <label for="terms">By verifying and adding details, you agree to the <a href="termsCondition.html">terms and conditions</a>.</label>
                     </div>
                 </div>
 
@@ -88,10 +88,23 @@
     </div>
 
     <script>
-        // Trigger the file upload dialog
-        function triggerFileUpload(id) {
-            document.getElementById(id).click();
-        }
+        // Check if the user has scrolled to the end of the Terms and Conditions
+        const termsContainer = document.querySelector("#terms-container");
+        const checkbox = document.getElementById("terms");
+        const submitButton = document.querySelector("button[type='submit']");
+        
+        termsContainer.addEventListener("scroll", function() {
+            // Check if the user has scrolled to the bottom
+            if (termsContainer.scrollHeight - termsContainer.scrollTop === termsContainer.clientHeight) {
+                checkbox.disabled = false;  // Enable the checkbox
+                submitButton.disabled = false;  // Enable the submit button
+            }
+        });
+    
+        // Disable the checkbox and submit button initially
+        checkbox.disabled = true;
+        submitButton.disabled = true;
     </script>
+    
 </body>
 </html>
