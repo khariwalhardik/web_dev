@@ -1,0 +1,38 @@
+.box{
+    /* border:2px solid black; */
+    width:200px;
+    height:250px;
+    background-color: #f1f1f1;
+    display:grid;
+    border-radius: 15px;
+    padding:13px;
+    
+}
+.id{
+    font-size: 20px;
+    font-weight: bold;
+    /* align item in the center vertically */
+}
+.id:hover, .title:hover, .body:hover, .user:hover{
+    /* color: #f1f1f1; */
+    background-color: #d1c4c4;
+    border-radius: 15px;
+}
+.title{
+    font-size: 15px;
+    font-weight: bold;
+
+}
+.body{
+    font-size: 12px;
+}
+.user{
+    font-size: 10px;
+    font-weight: bold;
+}
+.flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:7px;
+}

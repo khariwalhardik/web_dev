@@ -1,0 +1,16 @@
+nav, ul{
+    display:flex;
+    background-color: aquamarine;
+    justify-content: flex-end;
+}
+ul>li{
+    list-style:none;
+    padding:14px;
+}
+ul{
+    gap:34px;
+}
+li:hover{
+    background-color:blue;
+    color:white;
+}
