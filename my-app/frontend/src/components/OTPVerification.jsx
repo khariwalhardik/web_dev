@@ -14,7 +14,10 @@ const OTPVerification = () => {
   const [isVerified, setIsVerified] = useState(false);
   // const [otpSessionId, setOtpSessionId] = useState("");
   //using context api
+  const location = useLocation();
   const otpSessionId = valuex.otpSessionId;
+  const fromSignup = location.state?.fromSignup;
+  const fromLogin = location.state?.fromLogin;
   const navigate = useNavigate(); // Hook for navigation
   // const location = useLocation(); // Hook to access location state
 
@@ -51,8 +54,12 @@ const OTPVerification = () => {
         setVerificationMessage("OTP verified successfully!");
         setIsVerified(true);
         setTimeout(() => {
-          navigate("/verify-document"); // Redirect to VerifyDocument page after verification
-        }, 2000); // Delay the redirection for 2 seconds to show the success message
+          if (fromSignup) {
+            navigate("/verify-document"); // Signup flow
+          } else if (fromLogin) {
+            navigate("/newpage"); // Login flow
+          }// Redirect to VerifyDocument page after verification
+        }, 200); // Delay the redirection for 2 seconds to show the success message
       } else {
         setVerificationMessage(data.message || "Invalid OTP. Please try again.");
         setIsVerified(false);

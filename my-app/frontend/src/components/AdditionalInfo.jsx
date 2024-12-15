@@ -11,7 +11,6 @@ const AdditionalInfo = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [termsRead, setTermsRead] = useState(false); // Flag to track if terms are read
   const navigate = useNavigate();
-
   // Retrieve stored data from sessionStorage if available
   useEffect(() => {
     const storedTermsAccepted = sessionStorage.getItem("termsAccepted");
@@ -32,6 +31,16 @@ const AdditionalInfo = () => {
     if (storedDob) setDob(storedDob);
     if (storedProfilePic) setProfilePic(storedProfilePic);
   }, []);
+
+  useEffect(() => {
+    if (!valuex.otpSessionId) {
+      const storedOtpSessionId = sessionStorage.getItem("otpSessionId");
+      if (storedOtpSessionId) {
+        valuex.setOtpSessionId(storedOtpSessionId);
+      }
+    }
+  }, [valuex]);
+  
   
 
   // Store form data in localStorage

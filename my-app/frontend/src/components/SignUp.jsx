@@ -38,7 +38,8 @@ const SignUp = () => {
                     valuex.setOtpSessionId(data.otpSessionId); // Store otpSessionId from the response
                     // Pass otpSessionId to OTPVerification page
                     navigate("/otp-verification", {
-                        state: { otpSessionId: data.otpSessionId },
+                        state: { otpSessionId: data.otpSessionId ,fromSignup: true },
+
                     });
 
                     // Optionally, trigger OTP sending via a service like MSG91 (if not done on backend)

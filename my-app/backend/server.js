@@ -53,6 +53,68 @@ const transporter = nodemailer.createTransport({
     rejectUnauthorized: false,
   },
 });
+// Login Route
+app.post("/api/login", async (req, res) => {
+  const { email, phone } = req.body;
+
+  if (!email || !phone) {
+    return res.status(400).json({ message: "Both email and phone are required." });
+  }
+
+  try {
+    // Check if the user exists
+    const user = await User.findOne({ email, phone });
+    if (!user) {
+      return res.status(404).json({ message: "User not found. Please sign up." });
+    }
+
+    // Generate OTP
+    const otp = Math.floor(1000 + Math.random() * 9000);
+
+    // Save OTP to MongoDB
+    const otpEntry = new OTP({ email, otp });
+    await otpEntry.save();
+
+    // Send OTP via email
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: "Your Login OTP Code",
+      text: `Your OTP code is ${otp}`,
+    };
+
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        console.error("Error sending email:", err);
+        return res.status(500).json({ message: "Error sending OTP." });
+      }
+
+      console.log("Email sent:", info.response);
+      // Respond with OTP session ID
+      res.status(200).json({
+        message: "OTP sent to your email.",
+        otpSessionId: otpEntry._id, // Send OTP session ID to the frontend
+      });
+    });
+
+    // Uncomment this block to enable OTP via SMS (currently commented)
+    // const msg91Response = await axios.post("https://api.msg91.com/api/v5/otp", {
+    //   authkey: "your-msg91-authkey",
+    //   template_id: "your-template-id",
+    //   mobile: phone,
+    //   otp: otp,
+    // });
+
+    // if (msg91Response.data.type === "success") {
+    //   return res.status(200).json({ message: "OTP sent to your email and mobile." });
+    // } else {
+    //   return res.status(500).json({ message: "Error sending OTP to mobile." });
+    // }
+
+  } catch (error) {
+    res.status(500).json({ message: "Error during login.", error: error.message });
+  }
+});
 
 // Sign-Up Route
 app.post("/api/signup", async (req, res) => {
@@ -123,11 +185,18 @@ app.post("/api/verify-otp", async (req, res) => {
   const { otpEmail, otpMobile, otpSessionId } = req.body;
 
   // Log to check if the request body is coming through correctly
-  console.log("Received OTP details:", otpEmail, otpMobile, otpSessionId);
+  console.log(`Received data:
+    otpEmail: ${otpEmail},
+    otpMobile: ${otpMobile},
+    otpSessionId: ${otpSessionId}`);
 
-  if (!otpEmail || !otpMobile || !otpSessionId) {
-    return res.status(400).json({ message: "OTP email, OTP session ID, and OTP values are required." });
-  }
+  // if (!otpEmail || !otpMobile || !otpSessionId) {
+  //   return res.status(400).json({ message: "OTP email, OTP session ID, and OTP values are required." });
+  // }
+  if(!otpEmail){return res.status(400).json({ message: "OTP email is required." });}
+  if(!otpMobile){return res.status(400).json({ message: "OTP mobile is required." });}
+  if(!otpSessionId){return res.status(400).json({ message: "OTP session ID is required." });}
+
 
   try {
     // Retrieve OTP entry from database using the session ID
@@ -277,7 +346,7 @@ const upload = multer({ storage: storage });
 
 // Handle the API request to save additional info
 app.post("/api/additional-info", upload.single("profilePic"), async (req, res) => {
-  const { otpSessionId, workplace, address, dob } = req.body;
+  const { otpSessionId, workplace, address, dob,profilePic } = req.body;
 
   // Log the received data and file for debugging purposes
   console.log("Received additional info data:", req.body);

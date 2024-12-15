@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./VerifyDocument.css";
 import { counterContext } from "../context/context";
 const VerifyDocument = () => {
+
   const navigate = useNavigate();
   const valuex = useContext(counterContext); // value contains otpSessionId and setOtpSessionId, signUpSessionId and setSignUpSessionId
 
@@ -15,6 +16,11 @@ const VerifyDocument = () => {
   const [aboutYourself, setAboutYourself] = useState(""); // State for "Tell About Yourself"
 
   const otpSessionId = valuex.otpSessionId;
+  useEffect(() => {
+    if (otpSessionId) {
+      sessionStorage.setItem("otpSessionId", otpSessionId);
+    }
+  }, [otpSessionId]);
 
   const handleOptionChange = (type, value) => {
     if (type === "govt-id") setGovtIdOption(value);
