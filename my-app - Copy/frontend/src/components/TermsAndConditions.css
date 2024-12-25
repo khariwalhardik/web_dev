@@ -1,0 +1,71 @@
+/* General container styles */
+.container-terms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+  .left-terms  {
+    width: 40vw;
+    height: 100vh;
+    background-color: black;
+  }
+  
+  .right-terms {
+    width:60vw;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding:20px;
+  }
+  
+  .terms-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .terms-content {
+    max-height: 400px;
+    overflow-y: scroll;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .terms-paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox-container-terms {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .terms-label {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  
+  .submit-button-terms {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .submit-button-terms:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

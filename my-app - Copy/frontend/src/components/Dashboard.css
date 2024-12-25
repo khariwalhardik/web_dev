@@ -1,0 +1,118 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-menu {
+  margin-left: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+/* Branding Section */
+.branding {
+  text-align: center;
+  background-color: #ddd;
+  padding: 2rem;
+}
+
+.branding h1 {
+  margin-bottom: 1rem;
+}
+
+.download-buttons button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Recently Shared Section */
+.recently-shared .cards {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background-color: #eef;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0.5rem;
+}
+
+/* User Profiles */
+.user-profiles .profile-circles {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Upcoming Advice */
+.upcoming-advice .advice-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.advice-card {
+  background-color: #eef;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tags .tag {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+}
