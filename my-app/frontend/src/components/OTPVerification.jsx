@@ -57,7 +57,9 @@ const OTPVerification = () => {
           if (fromSignup) {
             navigate("/verify-document"); // Signup flow
           } else if (fromLogin) {
-            navigate("/newpage"); // Login flow
+
+            // navigate("/newpage"); // Login flow
+            navigate(`/dashboard/${otpSessionId}`);
           }// Redirect to VerifyDocument page after verification
         }, 200); // Delay the redirection for 2 seconds to show the success message
       } else {

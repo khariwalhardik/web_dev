@@ -125,7 +125,7 @@ let card2 = createCard('Think Faster, Talk Smarter with Matt Abrahams','Standfor
 container.appendChild(card2);
 let card3 = createCard('Hardik Khariwal Learning Web Development -> Day3','Reading By HK',12420000,1,'10:30','https://i.ytimg.com/vi/kJEsTjH5mVg/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB2CBsdfdhlYA7kZwtSfre44-Wx_g');
 container.appendChild(card3);
-let totalCards=6;
+let totalCards=1;
 for(let i=0;i<totalCards;i++){
     let card=createCard('Hardik Khariwal Learning Web Development -> Day'+(i+4),'Reading By HK',252350000,1,'10:30','https://i.ytimg.com/vi/kJEsTjH5mVg/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB2CBsdfdhlYA7kZwtSfre44-Wx_g');
     container.appendChild(card);
